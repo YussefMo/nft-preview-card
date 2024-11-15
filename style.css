@@ -1,0 +1,194 @@
+/* main conf */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+:root
+{
+    font-size: 18px;
+    color: white;
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --fw300: 300;
+    --fw400: 400;
+    --fw600: 700;
+}
+/* font famly and bg asgin */
+body
+{
+    font-family: "Outfit", sans-serif;
+    background-color: var(--Very-dark-blue-main-BG);
+}
+/* Main container style */
+.container
+{
+    width: 100vw;
+    height: 97vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* Card style */
+.card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 70%;
+    width: 20%;
+    background-color: var(--Very-dark-blue-card-BG);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 8px 12px 50px 10px black;
+    transition: transform 0.5s;
+}
+.card:hover
+{
+    transform: scale(1.02);
+    box-shadow: 4px 6px 20px 0px white;
+}
+/* Image container */
+.image-container
+{
+    margin-top: 20px;
+    position: relative;
+    width: 88%;
+    height: 55%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 1s;
+}
+/* Image styling */
+.image-container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Hover effect styling */
+.image-container:hover::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--Cyan);
+    opacity: 0.3;
+    z-index: 1;
+}
+.image-container:hover::after
+{
+    content: url(./images/icon-view.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+/* details styling */
+.details
+{
+    width: 88%;
+    margin-top: 20px;
+    font-weight: var(--fw300);
+    color: var(--Soft-blue);
+}
+.details h2
+{
+    color: white;
+    transition: 500ms;
+}
+.details h2:hover
+{
+    color: var(--Cyan);
+}
+.des
+{
+    margin-top: 20px;
+    
+}
+.details div
+{
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.details div img
+{
+    height: 20px;
+    width: 15px;
+    margin-right: 10px;
+}
+/* owner container style */
+.owner
+{
+    border-top: solid 1px var(--Soft-blue);
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    height: 10%;
+}
+.owner img
+{
+    height: 40px;
+    width: 40px;
+}
+.owner p
+{
+    width: 82%;
+}
+.owner span
+{
+    color: var(--Soft-blue);
+}
+.owner .hover
+{
+    color: white;
+    transition: 500ms;
+}
+.owner .hover:hover
+{
+    color: var(--Cyan);
+}
+/* responsive styles */
+@media screen and (max-width: 1440px)
+{
+    .card
+    {
+        width: 27%;
+    }
+}
+@media screen and (max-width: 1024px)
+{
+    .card
+    {
+        width: 35%;
+    }
+}
+@media screen and (max-width: 768px)
+{
+    .card
+    {
+        width: 48%;
+    }
+}
+@media screen and (max-width: 480px)
+{
+    .card
+    {
+        width: 90%;
+    }
+}
